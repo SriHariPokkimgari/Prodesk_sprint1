@@ -6,6 +6,8 @@ Responsive landing page for the Prodesk IT digital marketing wing, built with **
 
 ![Screenshot of the deployed site](/assests/deployed_img.png) <!-- replace with your own screenshot -->
 
+**Lighthouse Audit Result**
+
 ![Lighthouse audit results](/assests/lighthouse_audit.png)
 
 ## Features
