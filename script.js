@@ -19,22 +19,24 @@ var saved = null;
 try {
   saved = localStorage.getItem("theme");
 } catch (e) {}
+
 var prefersDark =
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches;
 setTheme(saved ? saved === "dark" : prefersDark);
+
 toggle.addEventListener("click", function () {
   setTheme(!body.classList.contains("dark"));
 });
 
 /* ----- Mobile menu ----- */
 function setMenu(open) {
-  nav.classList.toggle("open", open);
+  nav.classList.toggle("hidden", !open);
   menuBtn.setAttribute("aria-expanded", String(open));
   menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 }
 menuBtn.addEventListener("click", function () {
-  setMenu(!nav.classList.contains("open"));
+  setMenu(nav.classList.contains("hidden"));
 });
 nav.addEventListener("click", function (e) {
   if (e.target.tagName === "A") setMenu(false);
